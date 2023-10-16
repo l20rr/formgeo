@@ -1,0 +1,100 @@
+ 
+      
+        @media screen and (max-width: 1000px) {
+        
+            
+            input {
+                width: 70%;
+                height: 7%;
+                margin: 10px;
+                border: none;
+                border-bottom: 1px solid #000000;
+                text-align: center;
+                font-size: 1.2rem;
+            }
+      
+            .container > img{
+                width: 50%;
+             
+                border-radius: 70%;
+            }
+           
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 70vw;
+            height: 100vh;
+          
+            border-radius:15px ;
+        }
+        
+        .container> h1 {
+            color: #333;
+            margin: 30px;
+        }
+        
+        #meu-formulario {
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 4px solid #000000;
+            border-radius: 15px;
+            background-color: #f9f9f9;
+            font-size: 1.5rem;
+            height: 50%;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 70%;
+            height: 5%;
+            margin: 10px;
+            border: none;
+            border-bottom: 1px solid #000000;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        input:active{
+            border: none;
+            border-bottom: 1px solid #000000;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 70%;
+            height: 10%;
+            margin: 10px;
+            font-size: 1.2rem;
+        }
+        img{
+            width: 20%;
+            border-radius: 70%;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }

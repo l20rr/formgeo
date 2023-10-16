@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário Geo-politica</title>
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="./pedro.jpg" />
+    <h1>Geopolítica:</h1>
+
+    <form id="meu-formulario">
+        <label for="nome">Name:</label>
+        <input type="text" id="nome" name="nome" placeholder="Pedro" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br>
+        
+        <label for="telefone">Phone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="975462235" required><br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+    <!-- Configuração do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAqByS3aDfeoZAR18qNHQdH8eMRONpjg_0",
+            authDomain: "colegio-8c40f.firebaseapp.com",
+            databaseURL: "https://colegio-8c40f-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "colegio-8c40f",
+            storageBucket: "colegio-8c40f.appspot.com",
+            messagingSenderId: "942709627594",
+            appId: "1:942709627594:web:64562ca30e03b17283b233",
+            measurementId: "G-04V86FZKGM"
+        };
+
+        // Inicializa o Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Referência ao Firestore
+        var db = firebase.firestore();
+
+        // Evento de envio do formulário
+        document.getElementById("meu-formulario").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Coleta os dados do formulário
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var telefone = document.getElementById("telefone").value;
+
+            // Salva os dados no Firebase
+            db.collection("userP").add({
+                nome: nome,
+                email: email,
+                telefone: telefone
+            })
+            .then(function(docRef) {
+                console.log("Dados salvos com ID: ", docRef.id);
+            })
+            .catch(function(error) {
+                console.error("Erro ao salvar dados: ", error);
+            });
+        });
+    </script>
+</body>
+</html>
