@@ -62,8 +62,14 @@
                 telefone: telefone
             })
             .then(function(docRef) {
-                console.log("Dados salvos com ID: ", docRef.id);
-            })
+                var container = document.querySelector(".container");
+            container.style.display = "none";
+
+            // Exibe a mensagem de sucesso na tela
+            var mensagemSucesso = document.createElement("h1");
+            mensagemSucesso.textContent = "Obrigado " + nome + " seus dados foram enviados com sucesso.";
+            document.body.appendChild(mensagemSucesso);
+        })
             .catch(function(error) {
                 console.error("Erro ao salvar dados: ", error);
             });
